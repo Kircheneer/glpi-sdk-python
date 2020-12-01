@@ -695,7 +695,7 @@ class GLPI(object):
         #    example: {"1": {"uid": "Computer.name"}} gets {"name": 1}
         field_map = {}
         opts = self.search_options(item_name)
-        for field_id, field_opts in opts:
+        for field_id, field_opts in opts.items():
             if field_id.isdigit() and 'uid' in field_opts:
                 # support case-insensitive strip from item_name!
                 field_name = re.sub('^'+item_name+'.', '', field_opts['uid'],
